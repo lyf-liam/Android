@@ -1,0 +1,270 @@
+
+.nav {
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    display: block;
+}
+
+.jump-group {
+    z-index: 1;
+    position: fixed;
+    top: 100px;
+    margin-left: -64px;
+}
+
+.btn-jump {
+    background-color: #99CCFF;
+    box-shadow: 0px 0px 16px #999;
+}
+
+.btn {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0;
+    border-radius: 4px;
+    transform: skew(-20deg);
+}
+
+.active .btn-jump {
+    background-color: #FF9999;
+}
+
+.nav>li {
+    position: relative;
+    display: block;
+}
+
+.jump-group>li {
+    margin: 18px;
+}
+
+.jump-group a {
+    color: #FFF;
+    background: none;
+}
+
+.btn-jump, .btn-jump:hover, .btn-jump:active, .btn-jump:focus {
+    color: #FFF !important;
+}
+
+.btn-jump {
+    display: block;
+    min-width: 110px;
+    color: #FFF;
+    font-size: 28px;
+}
+
+.btn {
+    z-index: 0;
+    position: relative;
+    border: none;
+    color: #999;
+    padding: 10px 16px;
+    margin-right: 1px;
+    font-size: 24px;
+    line-height: 1.3333333;
+}
+
+.btn .fa {
+    top: 2px;
+}
+
+.container-main {
+    box-shadow: 0 0 10px #BBB;
+    background: url(../../src/images/background.png) center no-repeat;
+    background-color: #FFF;
+    background-attachment: fixed;
+}
+
+.nav-aligned {
+    padding: 0;
+    margin-left: -16px;
+    margin-right: -16px;
+    border: none;
+    border-radius: 0;
+    background-color: #666;
+    box-shadow: 0 0 10px #BBB;
+}
+
+.container-fluid>.row {
+    margin-left: 1px;
+    width: 100%;
+}
+
+.nav-icon-left {
+    padding-right: 20px;
+}
+
+.nav-icon {
+    text-align: center;
+    padding-top: 8px;
+    font-size: 22px;
+}
+
+.nav-aligned a {
+    color: #CCC;
+}
+
+.nav-header {
+    height: 50px;
+}
+
+.nav-header {
+    display: block;
+    background: #AAA;
+    background-image: linear-gradient(to top, #BBB, #AAA);
+    transform: skew(-20deg);
+}
+
+.nav-header-text {
+    color: #FFF;
+    line-height: 1.9;
+    text-align: center;
+    font-size: 26px;
+    font-weight: 200;
+}
+
+.nav-icon-right {
+    padding-left: 20px;
+}
+
+.container-content {
+    padding: 0 72px 72px 100px;
+    color: #666;
+    line-height: 1.6;
+}
+
+.content-jumbotron {
+    padding: 40px 0 16px 0;
+}
+
+.jumbotron-left {
+    margin-right: -40px;
+}
+
+.jumbotron-lang {
+    white-space: nowrap;
+    margin-right: 14px;
+}
+
+.jumbotron-code {
+    color: #999;
+    margin-top: 60px;
+    white-space: nowrap;
+    font-size: 32px;
+}
+
+.btn-default {
+    background-color: #FBFBFB;
+    border: 2px solid #CCC;
+    width: 70px;
+    margin-top: 15px;
+}
+
+.btn-blue, .btn-blue:hover, .btn-blue:active, .btn-blue:focus {
+    color: #74DCFE !important;
+    margin-left: -20px;
+    margin-top: 15px;
+}
+
+.btn-success {
+    background-color: #91e291;
+    color: #FFF;
+}
+
+.btn-success:hover {
+    background-color: #9ee79e;
+}
+
+.btn-info, .btn-info:hover {
+    background-color: #FBFBFB;
+    border: 2px solid #74DCFE;
+    width: 240px;
+}
+
+.btn-section {
+    background-color: #FBFBFB;
+    border: 2px solid #CCC;
+    margin-bottom: 25px;
+    width: 200px;
+}
+
+.btn-lg {
+    padding: 10px 34px 12px 30px;
+    margin-right: 4px;
+    font-size: 32px;
+}
+
+.container-content>h1 {
+    margin-top: 48px;
+    padding: 48px 0 32px 0;
+    color: #666;
+    border-top: 4px solid #CCC;
+    font-size: 64px;
+}
+
+.thumbnail-content {
+    display: inline-block;
+    padding: 16px;
+}
+
+.btn-common {
+    background-color: #FFF;
+    border: 2px solid #74DCFE;
+    width: 43px;
+    height: 45px;
+    color: #74DCFE;
+}
+
+.btn-common:hover {
+    background-color: #74DCFE;
+    border: 2px solid rgb(32, 146, 223);
+    width: 43px;
+    height: 45px;
+    color: #FFF;
+    transition: 300ms;
+}
+
+.btn-danger {
+    margin-left: 50px;
+    background-color: #FFF;
+    border: 2px solid #dc3545;
+    width: 43px;
+    height: 45px;
+    color: #dc3545;
+}
+
+.btn-danger:hover {
+    transition: 300ms;
+}
+
+.panel-default {
+    border-color: #ddd;
+}
+
+.panel-default>.panel-heading {
+    color: #333;
+    background-color: #f5f5f5;
+    border-color: #ddd;
+}
+
+.panel-heading {
+    padding: 10px 15px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+.panel {
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
+}

@@ -1,0 +1,73 @@
+<a class="btn btn-outline-info float-right" data-toggle="collapse" href="#addSingle" role="button" aria-expanded="false" aria-controls="collapseExample">
+    添加一个用户
+</a>
+<div class="collapse float-right col-sm-12" id="addSingle">
+  <div class="card card-body">
+      <form id="newsfm" >
+            <div class="form-group">
+              <label for="newsTitle">Username:</label>
+              <input type="text" class="form-control" id="newsTitle" name="title">
+              <small id="titleMsg" class="form-text">&nbsp;</small>
+            </div>
+            <div class="form-group">
+                <label for="type">Type:</label>
+                <select class="form-control" id="type" name="type">
+                  <option value="1">在校学生</option>
+                  <option value="2">毕业校友</option>
+                  <option value="3">在职教师</option>
+                </select>
+                <small id="codeMsg" class="form-text">&nbsp;</small>
+            </div>
+            <button id="addSingleBtn" type="button" class="float-right col-sm-2 btn btn-outline-success">Create</button>
+      </form>
+  </div>
+</div>
+
+<a class="btn btn-outline-success float-right" data-toggle="collapse" href="#addBatch" role="button" >
+    批量添加用户
+</a>
+<div class="collapse float-right col-sm-12" id="addBatch">
+  <div class="card card-body">
+      <form id="batchFm" enctype="multipart/form-data">
+            <div class="form-group">
+                <div class="custom-file">
+                      <label for="userexcel">上传导入模板</label>
+                      <input type="file" class="form-control-file" id="userexcel" name="userexcel">
+                </div>
+            </div>
+            <div class="form-row float-right">
+                <a href="/administor/download"><button id="downloadBtn" type="button" class="col btn btn-outline-info">下载模板</button></a>
+                <button id="addBatchBtn" type="button" class="col btn btn-outline-success">开始导入</button>
+            </div>
+      </form>
+  </div>
+</div>
+
+<div>
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">#学号</th>
+            <th scope="col">#操作</th>
+          </tr>
+        </thead>
+        <tbody>
+            {{#each data as |item|}}
+              <tr class="newsItem">
+                <td>{{item.username}}</td>
+                <td>
+                  <a title="详情" href="/newsPreview?id={{item.id}}"><i class="fa fa-eye fa-lg"></i></a>
+                  <a title="编辑" href="/administor/editNews?id={{item.id}}"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></a>
+                  <a title="启用" href="/administor/publish?id={{item.id}}"><i class="fa fa-bullhorn fa-lg" aria-hidden="true"></i></a>
+                  <a title="禁用" href="/administor/ban?id={{item.id}}"><i class="fa fa-ban fa-lg" aria-hidden="true"></i></a>
+                </td>
+              </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
+
+<script type="text/javascript">
+    $('.view-tab').removeClass('active');
+    $('#student-tab').addClass('active');
+</script>

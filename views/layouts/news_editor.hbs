@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/public/lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/public/lib/font/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/public/lib/editor.md/css/editormd.css"/>
+    <title>NewsEdit</title>
+</head>
+
+<body>
+    {{{body}}}
+    <script type="text/javascript" src="/public/lib/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="/public/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/public/lib/editor.md/editormd.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            var editor = editormd("test-editormd", {
+                width  : "90%",
+                height : 720,
+                theme : "dark",
+                path   : "/public/lib/editor.md/lib/",
+                saveHTMLToTextarea : true, // 保存 HTML 到 Textarea
+                toolbarAutoFixed:true,//工具栏自动固定定位的开启与禁用
+            });
+        });
+    </script>
+    <script type="text/javascript" src="/public/js/editor.js"></script>
+</body>
+
+</html>
