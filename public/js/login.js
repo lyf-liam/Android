@@ -34,6 +34,8 @@ $(document).ready(() => {
 
     $('#loginBtn').on('click', function(event) {
         event.preventDefault();
+        console.log(accessToLogin[0]);
+        console.log(accessToLogin[1]);
         if (accessToLogin[0] && accessToLogin[1]) {
             let info = $('#loginForm').serialize()
             console.log(info)
@@ -44,16 +46,14 @@ $(document).ready(() => {
                 success: function(res) {
                     if (res.code == 200) {
                         alert(res.msg);
-                        if (res.role == 1) {
-                            // 去学生端
-                            console.log("student");
-                        } else if (res.role == 2) {
-                            // 去校友端
-                            console.log("alumns")
-                        } else if (res.role == 3) {
-                            // 去管理员端
-                            console.log("admin");
-                            window.location.href = '/administor'
+                        if (res.role == 0) {
+                            // 去用户端
+                            console.log("user");
+                            window.location.href = `/knowledge?id=${res.id}`
+                        } else if (res.role == 1) {
+                            // 去管理员
+                            console.log("admain")
+                            window.location.href = `/administor?id=${res.id}`
                         } else {
                             alert("系统异常");
                         }
@@ -73,9 +73,5 @@ $(document).ready(() => {
         window.location.href = "/signup";
     })
 
-    $('#githubBtn').on('click', function(event) {
-        event.preventDefault();
-        window.location.href = "https://github.com/login/oauth/authorize?client_id=41464cba40217f9ecffb&scope=user:email";
-    })
 
 })

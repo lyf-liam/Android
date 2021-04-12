@@ -1,0 +1,36 @@
+
+<div class="container">
+<container>
+{{> nav_in}}
+
+  <div id="questionnaire">
+    <div class="card">
+        <div class="card-header text-center">
+            高血压中医证型分析 
+        </div>
+        <div id="questionnaireBody" class="card-body">
+          <form action="" id="fm">
+            {{#each list as |item|}}
+            <div class="question">
+              <p>{{item.id}}、{{item.question}}</p>
+              <div class="chooice">
+                <input type="radio" name="a{{item.id}}" value="1">{{item.A}}
+                <input type="radio" name="a{{item.id}}" value="0">{{item.B}}
+              </div>
+            </div>
+            {{/each}}
+            <button id="submitBtn" type="button" class="col-sm-12 btn btn-outline-success">
+              提&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;交
+            </button>
+          </form>
+            
+        </div>
+    </div>
+  </div>
+
+</container>
+
+
+{{>copyright}}
+
+</div>

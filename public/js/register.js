@@ -1,6 +1,6 @@
 var errArray = [
-    "邮箱不能为空",
-    "邮箱格式不正确",
+    "手机号不能为空",
+    "手机号格式不正确",
     "用户名不能为空",
     "用户名只能是英文、数字、下划线、减号的组合",
     "用户名长度必须在6-16个字符之间",
@@ -13,7 +13,7 @@ var errArray = [
 
 var accessToSubmit = [0,0,0,0]
 
-var emailPattern = /^\w+@[a-zA-Z0-9]+\.[a-zA-Z]{2,4}$/;
+var telePattern = /^1(?:3\d|4[4-9]|5[0-35-9]|6[67]|7[013-8]|8\d|9\d)\d{8}$/;
 
 var pattern = /^[a-zA-Z0-9_\-]+$/;
 
@@ -36,18 +36,18 @@ function LockBtn(btn) {
 
 $(document).ready(() => {
 
-    $('#email').blur(function() {
-        let userEmail = $(this).val();
-        if (userEmail == "") {
-            $('#emailMsg').html(errArray[0]).css('color', 'red');
+    $('#tele').blur(function() {
+        let userTele = $(this).val();
+        if (userTele == "") {
+            $('#teleMsg').html(errArray[0]).css('color', 'red');
             $(this).removeClass('is-valid').addClass('is-invalid');
             accessToSubmit[0] = 0;
-        } else if (!emailPattern.test(userEmail)) {
-            $('#emailMsg').html(errArray[1]).css('color', 'red');
+        } else if (!telePattern.test(userTele)) {
+            $('#teleMsg').html(errArray[1]).css('color', 'red');
             $(this).removeClass('is-valid').addClass('is-invalid');
             accessToSubmit[0] = 0;
         } else {
-            $('#emailMsg').html('&nbsp');
+            $('#teleMsg').html('&nbsp');
             $(this).removeClass('is-invalid').addClass('is-valid');
             accessToSubmit[0] = 1;
         }
@@ -111,17 +111,18 @@ $(document).ready(() => {
     /**
      * 发送验证码，校验验证码
      */
+
     $('#sendBtn').on('click', (event) => {
         event.preventDefault();
-        let userEmail = $('#email').val();
+        let userTele = $('#tele').val();
         if (accessToSubmit[0] == 0) {
-            $('#codeMsg').html("邮箱有误").css('color', 'red');
+            $('#codeMsg').html("手机号有误").css('color', 'red');
             accessToSubmit[3] = 0;
         } else if (accessToSubmit[0] == 1) {
             lockTime = 180;
             btn = document.getElementById('sendBtn')
             LockBtn(btn);
-            $.get('/sendCode/' + userEmail, (res) => {
+            $.get('/sendCode/' + userTele, (res) => {
                 if (res.code == 500) {
                     alert(res.msg);                    
                 } else if (res.code == 200) {
@@ -137,8 +138,9 @@ $(document).ready(() => {
     $('#signupBtn').on('click', (event) => {
         event.preventDefault();
         // 可以提交了
-        if (accessToSubmit[0] && accessToSubmit[1] && accessToSubmit[2] && accessToSubmit[3]) {
+        if (accessToSubmit[0] && accessToSubmit[1] && accessToSubmit[2] ) {  //暂时除去验证码&& accessToSubmit[3]
             let info = $('#fm').serialize();
+            console.log(info);
             $.ajax({
                 url: '/register',
                 method: 'post',

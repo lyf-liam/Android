@@ -1,23 +1,5 @@
-.dataHZNU>h2 {
-    margin-top: 100px;
-    margin-bottom: 40px;
-    font-family: "Microsoft JhengHei", "明黑", Arial, Helvetica;
-    font-size: 36px;
-    color: #6416a6;
-    text-align: center;
-    line-height: 1em;
-    margin-bottom: 40px;
-}
-
 a:hover {
     text-decoration: none;
-}
-
-.hotbar>a:hover {
-    text-decoration: none;
-    color: #FFF;
-    border: 2px solid #FFF;
-    box-shadow: 0 0 10px #FFF;
 }
 
 b {
@@ -94,75 +76,20 @@ li {
     padding-top: 10px;
 }
 
-.hot>.wrapper-text {
-    margin-left: 100px;
-}
 
-.hotmore{
-    height: 48px;
-    font-size: 14px;
-    line-height: 48px;
-    border: 1px solid #FFF;
-    padding: 0 20px;
-    display: block;
-    margin: 260px auto 0px auto;
-    width: 150px;
-    color: #FFF;
-    text-align: center;
-    opacity: 0.5;
-}
 
-.hotbar {
-    margin-top: -80px;
-    width: 1450px;
-    margin: auto;
-}
+
 
 .copy {
     background: rgba(0, 0, 0, 0.5);
     padding: 50px 0 30px 0;
 }
 
-.cbg {
-    background: url(../../src/images/tbg.jpg);
-    position: absolute;
-    z-index: -1;
-    transform: rotate(-4deg) skew(-4deg) translateY(-40px);
-    transform-origin: center top;
-    height: 425px;
-    width: 100%;
-    right: 0px;
-}
-
-.hotHZNU>h2 {
-    font-family: "Microsoft JhengHei", "明黑", Arial, Helvetica;
-    font-size: 36px;
-    color: #fff;
-    text-align: center;
-    line-height: 1em;
-    margin-top: 100px;
-    margin-bottom: 40px;
-}
-
-.hotHZNU>b {
-    height: 1px;
-    width: 60px;
-    background: #6416a6;
-    display: inline-block;
-    vertical-align: middle;
-    opacity: 0.5;
-    margin: 0 20px;
-}
 
 .footer {
-    margin-top: 110px;
-    padding-top: 410px;
-    position: relative;
-    z-index: -2;
-    height: 750px;
-    transform: translateY(-190px);
-    background: url(../../src/images/footbg.jpg) no-repeat bottom center;
-    background-size: cover;
+    margin-top: 10px;
+    padding-top: 10px;
+
 }
 
 .footer .copy .en {
@@ -204,3 +131,8 @@ li {
     padding-top: 20px;
     padding-left: 50px;
 }
+
+.col-form-label{
+    padding-right: 0;
+}
+

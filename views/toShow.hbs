@@ -1,0 +1,51 @@
+<div class="card">
+  <div class="card-header">
+    欢迎查看个人信息
+  </div>
+  <div class="card-body">
+
+    <form id="fm">
+      <div class="form-group">
+        <label for="tele">手机号：</label>
+        <input type="tel" class="form-control" id="tele" name="tele" disabled="disabled" value="{{list.tele}}">
+        <small id="teleMsg" class="form-text">&nbsp;</small>
+      </div>
+      <div class="form-group">
+        <label for="username">用户名：</label>
+        <input type="text" class="form-control" name="username" id="username" value="{{list.username}}">
+        <small id="usernameMsg" class="form-text">&nbsp;</small>
+      </div>
+      <div class="form-group">
+        <label for="password">密码：</label>
+        <input type="password" class="form-control" name="password" id="password" value="{{list.password}}">
+        <small id="passwordMsg" class="form-text">&nbsp;</small>
+      </div>
+      <div class="form-group">
+        <label for="surePassword">确认密码：</label>
+        <input type="password" class="form-control" name="surePassword" id="surePassword">
+        <small id="passwordMsg" class="form-text">&nbsp;</small>
+      </div>
+      <div class="form-group row">
+          
+          <div class="col-sm-12">
+            <button id="changeBtn" type="button" class="col-sm-12 btn btn-outline-success">
+            确&nbsp;&nbsp;&nbsp;&nbsp;认&nbsp;&nbsp;&nbsp;&nbsp;修&nbsp;&nbsp;&nbsp;&nbsp;改
+            </button>
+          </div>
+        </div>
+        <div class="form-group row">
+          
+          <div class="col-sm-12">
+            <button id="backBtn" type="button" class="col-sm-12 btn btn-outline-success">
+              返&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;回
+            </button>
+          </div>
+        </div>
+      
+      
+    </form>
+  </div>
+  <div class="card-footer text-muted">
+    Since 3/28/2021 develop
+  </div>
+</div>

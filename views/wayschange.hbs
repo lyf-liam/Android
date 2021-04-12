@@ -1,0 +1,59 @@
+
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            干预方法修改
+        </div>
+    <div class="card-body">
+    <form action="">
+        <div class="form-group">
+            <label for="waysId">序号:</label>
+            <input type="text" class="form-control" id="waysId" name="waysId" disabled="disabled" value="{{data.id}}">
+        </div>
+       <div class="form-group">
+            <label for="waysTitle">方案名称:</label>
+            <input type="text" class="form-control" id="waysTitle" name="waysTitle" value="{{data.ways_name}}"> 
+        </div>
+        <div class="form-group">
+                <label for="waystype">方案类型:</label>
+                <select class="form-control" id="waystype" name="waystype">
+                    <option value="{{waystype_id}}">{{data.ways_type}}</option>
+                    <option value="1">食疗方案</option>
+                    <option value="2">药膳方案</option>
+                </select>
+                <small id="codeMsg" class="form-text">&nbsp;</small>
+            </div>
+            <div class="form-group">
+                <label for="typename">中医证型:</label>
+                <select class="form-control" id="typename" name="typename">
+                  <option value="{{data.typename}}">{{data.typename}}</option>
+                  <option value="肝阳上亢">肝阳上亢</option>
+                  <option value="肝肾阴虚">肝肾阴虚</option>
+                  <option value="痰湿内阻">痰湿内阻</option>
+                  <option value="瘀血内停">瘀血内停</option>
+                  <option value="阴阳两虚">阴阳两虚</option>
+                </select>
+                <small id="codeMsg" class="form-text">&nbsp;</small>
+            </div>
+        <div class="form-group">
+            <label for="editordata">内容:</label>
+      
+            <textarea class="" id="wayscontent" name="editordata">
+                {{{data.ways_content}}}
+            </textarea>
+              
+            
+        </div>
+            <button id="changeWaysBtn" type="button" class="float-right col-sm-2 btn btn-outline-success">修改</button>
+
+    </form>
+    </div>
+    
+</div>
+
+<style>
+    textarea{
+        height: 300px;
+        width: 100%;
+    }
+</style>

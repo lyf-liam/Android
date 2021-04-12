@@ -1,0 +1,32 @@
+
+{{#each list as |item|}}
+<div class="card">       
+    <div class="card-header text-center">
+       {{item.k_title}}
+    </div>
+    <div id="newsBody" class="card-body">
+        {{#if k_type}}
+            {{#compare k_type 1}}
+            <p>{{{item.k_content}}} </p> 
+            {{/compare}}
+            {{#compare k_type 2}}
+            <img src="{{item.k_content}}">
+            {{/compare}}
+            {{#compare k_type 3}}
+            <video src="{{item.k_content}}" controls muted></video>
+            {{/compare}}
+        {{/if}}           
+    </div>  
+</div>
+{{/each}}
+
+<style>
+    img{
+        margin-left: 30%;
+        width: 40%;
+    }
+    video{
+        width: 60%;
+        margin-left: 20%;
+    }
+</style>

@@ -3,22 +3,22 @@
 </a>
 <div class="collapse float-right col-sm-12" id="addSingle">
   <div class="card card-body">
-      <form id="newsfm" >
+      <form id="singlefm" >
             <div class="form-group">
-              <label for="newsTitle">Username:</label>
-              <input type="text" class="form-control" id="newsTitle" name="title">
-              <small id="titleMsg" class="form-text">&nbsp;</small>
+              <label for="usertele">用户手机号:</label>
+              <input type="text" class="form-control" id="usertele" name="tele">
+              <small id="teleMsg" class="form-text">&nbsp;</small>
             </div>
             <div class="form-group">
-                <label for="type">Type:</label>
-                <select class="form-control" id="type" name="type">
-                  <option value="1">在校学生</option>
-                  <option value="2">毕业校友</option>
-                  <option value="3">在职教师</option>
+                <label for="role">用户权限:</label>
+                <select class="form-control" id="role" name="role">
+                  <option value="0">用户</option>
+                  <option value="1">管理员</option>
+                
                 </select>
                 <small id="codeMsg" class="form-text">&nbsp;</small>
             </div>
-            <button id="addSingleBtn" type="button" class="float-right col-sm-2 btn btn-outline-success">Create</button>
+            <button id="addSingleBtn" type="button" class="float-right col-sm-2 btn btn-outline-success">添加</button>
       </form>
   </div>
 </div>
@@ -47,19 +47,29 @@
     <table class="table table-striped">
         <thead>
           <tr>
-            <th scope="col">#学号</th>
+            <th scope="col">#用户名</th>
+            <th scope="col">#手机号</th>
+            <th scope="col">#启用状态</th>
             <th scope="col">#操作</th>
           </tr>
         </thead>
         <tbody>
             {{#each data as |item|}}
-              <tr class="newsItem">
+              <tr class="userItem">
                 <td>{{item.username}}</td>
+                <td>{{item.telephone}}</td>
+                {{#if status}}
+                {{#compare status 0}}
+                <td>未启用</td>
+                {{/compare}}
+                {{#compare status 1}}
+                <td>已启用</td>
+                {{/compare}}
+                {{/if}}
                 <td>
-                  <a title="详情" href="/newsPreview?id={{item.id}}"><i class="fa fa-eye fa-lg"></i></a>
-                  <a title="编辑" href="/administor/editNews?id={{item.id}}"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></a>
-                  <a title="启用" href="/administor/publish?id={{item.id}}"><i class="fa fa-bullhorn fa-lg" aria-hidden="true"></i></a>
-                  <a title="禁用" href="/administor/ban?id={{item.id}}"><i class="fa fa-ban fa-lg" aria-hidden="true"></i></a>
+                  <a title="详情" href="/administor/information?id={{item.id}}"><i class="fa fa-eye fa-lg"></i></a>
+                  <a title="启用" href="/administor/undele?id={{item.id}}"><i class="fa fa-bullhorn fa-lg" aria-hidden="true"></i></a>
+                  <a title="停用" href="/administor/dele?id={{item.id}}"><i class="fa fa-ban fa-lg" aria-hidden="true"></i></a>
                 </td>
               </tr>
             {{/each}}

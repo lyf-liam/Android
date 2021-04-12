@@ -6,28 +6,34 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="/public/lib/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/public/lib/font/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/public/lib/editor.md/css/editormd.css"/>
-    <title>NewsEdit</title>
+    <link rel="stylesheet" href="/public/lib/summernote/summernote.min.css"/>
+    <title>内容修改</title>
 </head>
 
 <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/administor">后台管理</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+            
+            </li>
+          </ul>
+            <a href="/logout"><button id="logoutBtn" class="btn btn-outline-success my-2 my-sm-0">退出登录</button></a>
+        </div>
+    </nav>
     {{{body}}}
     <script type="text/javascript" src="/public/lib/jquery-3.4.1.min.js"></script>
     <script type="text/javascript" src="/public/lib/bootstrap/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="/public/lib/editor.md/editormd.js"></script>
-    <script type="text/javascript">
-        $(function() {
-            var editor = editormd("test-editormd", {
-                width  : "90%",
-                height : 720,
-                theme : "dark",
-                path   : "/public/lib/editor.md/lib/",
-                saveHTMLToTextarea : true, // 保存 HTML 到 Textarea
-                toolbarAutoFixed:true,//工具栏自动固定定位的开启与禁用
-            });
-        });
-    </script>
-    <script type="text/javascript" src="/public/js/editor.js"></script>
+    <script type="text/javascript" src="/public/lib/summernote/summernote.min.js"></script>
+    <script type="text/javascript" src="/public/js/newschange.js"></script>
+    
+
+
 </body>
 
 </html>

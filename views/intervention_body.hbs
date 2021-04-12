@@ -1,0 +1,60 @@
+
+<div class="container">
+<container>
+{{> nav_in}}
+
+  <div id="intervention">
+  {{#each list as |item|}}
+  {{#if waystype_id}}
+  {{#compare waystype_id 1}}
+    <div class="card">       
+        <div class="card-header text-center">
+            
+            食疗方案
+        </div>
+        <div id="newsBody" class="card-body">
+            {{item.ways_name}}           
+            <br>        
+            {{item.ways_content}}           
+        </div>  
+    </div>
+    {{/compare}}
+
+    {{#compare waystype_id 2}}
+    <div class="card">       
+        <div class="card-header text-center">
+            
+            药膳方案
+        </div>
+        <div id="newsBody" class="card-body">
+            {{item.ways_name}}           
+            <br>        
+            {{item.ways_content}}           
+        </div>  
+    </div>
+    {{/compare}}
+
+    {{#compare waystype_id 3}}
+    <div class="card">       
+        <div class="card-header text-center">
+            
+            穴位按摩
+        </div>
+        <div id="newsBody" class="card-body">
+            {{item.ways_name}}   
+            <br>        
+            {{item.ways_content}}           
+        </div>  
+    </div>
+    {{/compare}}
+    {{/if}}
+    {{/each}}
+  </div>
+
+</container>
+
+
+{{>copyright}}
+
+</div>
+

@@ -1,0 +1,89 @@
+<a class="btn btn-outline-info float-right" data-toggle="collapse" href="#newsCreator" role="button" aria-expanded="false" aria-controls="collapseExample">
+    添加基本内容
+</a>
+<div class="collapse float-right col-sm-12" id="newsCreator">
+  <div class="card card-body">
+      <form id="newsfm">
+            <div class="form-group">
+              <label for="waysTitle">标题:</label>
+              <input type="text" class="form-control" id="waysTitle" name="waysTitle">
+              <small id="titleMsg" class="form-text">&nbsp;</small>
+            </div>
+            <div class="form-group">
+                <label for="waystype">类型:</label>
+                <select class="form-control" id="waystype" name="waystype">
+                  <option value="1">食疗方案</option>
+                  <option value="2">药膳方案</option>
+                </select>
+                <small id="codeMsg" class="form-text">&nbsp;</small>
+            </div>
+            <div class="form-group">
+                <label for="typename">证型:</label>
+                <select class="form-control" id="typename" name="typename">
+                  <option value="肝阳上亢">肝阳上亢</option>
+                  <option value="肝肾阴虚">肝肾阴虚</option>
+                  <option value="痰湿内阻">痰湿内阻</option>
+                  <option value="瘀血内停">瘀血内停</option>
+                  <option value="阴阳两虚">阴阳两虚</option>
+                </select>
+                <small id="codeMsg" class="form-text">&nbsp;</small>
+            </div>
+            
+            <div class="form-group">
+              <label for="editordata">内容:</label>
+      
+              <textarea class="form-control" id="wayscontent" name="editordata"></textarea>
+              
+              <small id="titleMsg" class="form-text">&nbsp;</small>
+            </div>
+            <button id="createWaysBtn" type="button" class="float-right col-sm-2 btn btn-outline-success">添加</button>
+      </form>
+
+
+  </div>
+</div>
+
+<div>
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col" style="width: 100px;">方法名</th>
+            <th scope="col" style="width: 100px;">证型</th>
+            <th scope="col">内容</th>
+            <th scope="col" style="width: 100px;">状态</th>
+            <th scope="col">处理</th>
+          </tr>
+        </thead>
+        <tbody>
+            {{#each list as |item|}}
+              <tr class="newsItem">
+                <td style="width: 100px;">{{{item.ways_name}}}</td>
+                <td style="width: 100px;">{{{item.typename}}}</td>
+                
+                <td>{{{item.ways_content}}}</td>
+                {{#if ways_status}}
+                {{#compare ways_status 2}}
+                <td>审核中</td>
+                {{/compare}}
+                {{#compare ways_status 1}}
+                <td>已发布</td>
+                {{/compare}}
+                {{/if}}
+                
+                <td style="width: 150px;">
+                  
+                  <a title="编辑" href="/administor/editWays?id={{item.id}}"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></a>
+                  <a title="出版" href="/administor/publish2?id={{item.id}}"><i class="fa fa-bullhorn fa-lg" aria-hidden="true"></i></a>
+                  <a title="禁用" href="/administor/ban2?id={{item.id}}"><i class="fa fa-ban fa-lg" aria-hidden="true"></i></a>
+                </td>
+              </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
+
+<script type="text/javascript">
+    $('.view-tab').removeClass('active');
+    $('#ways-tab').addClass('active');
+    
+</script>
