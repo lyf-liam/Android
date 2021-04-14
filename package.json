@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.19.2",
+    "baidu-aip-sdk": "^2.4.6",
     "blueimp-md5": "^2.18.0",
     "echarts": "^4.7.0",
     "echarts-wordcloud": "^1.1.3",

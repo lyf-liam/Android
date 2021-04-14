@@ -274,6 +274,7 @@ router.post('/register', (req, res) => {
     }
 })
 
+//登录
 router.post('/login', (req, res) => {
     let data = req.body;
     console.log(data);
@@ -295,6 +296,7 @@ router.post('/login', (req, res) => {
     }
 })
 
+//登出
 router.get('/logout', (req, res) => {
     req.session.destroy()
     res.redirect('/home')

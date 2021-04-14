@@ -6,37 +6,10 @@ var router = require("./router");
 var app = express();
 
 var help = {
-    statusFormat: function(e) {
-        if (e === 1) {
-            return "已发布"
-        } else if (e === 2) {
-            return "编辑中"
-        } else if (e === 3) {
-            return "已禁用"
-        }
-    },
-    typeFormat: function(e) {
-        if (e === 1) {
-            return "师大要闻"
-        } else if (e === 2) {
-            return "通知公告"
-        } else if (e === 3) {
-            return "学术报告"
-        }
-    },
-    descFormat: function(e) {
-        if (e === '' || e === null) {
-            return "This guy is too lazy and has nothing to show up╮(╯▽╰)╭"
-        } else {
-            return e
-        }
-    },
     compare:function(a,b,options){
         if(a == b){
-      
             return options.fn(this);        
             }else{
-            
             return options.inverse(this);
             }
     }

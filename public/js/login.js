@@ -49,7 +49,7 @@ $(document).ready(() => {
                         if (res.role == 0) {
                             // 去用户端
                             console.log("user");
-                            window.location.href = `/knowledge?id=${res.id}`
+                            window.location.href = `/reportAnalyse?id=${res.id}`
                         } else if (res.role == 1) {
                             // 去管理员
                             console.log("admain")

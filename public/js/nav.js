@@ -16,10 +16,10 @@ $(document).ready(()=>{
         var id = a[1];
         event.preventDefault();
         if (!id) {
-        window.location.href = `/knowledge`; 
+            alert("请先登录再来找我^0^")
+        // window.location.href = `/knowledge`; 
         } else {
-        window.location.href = `/knowledge?id=${id}`;
-            
+            window.location.href = `/knowledge?id=${id}`;
         }
     });
     //中医证型分析
@@ -42,9 +42,10 @@ $(document).ready(()=>{
                 success: function(res) {
                     if (res.code == 200) {
                         alert(res.msg);
-                        window.location.href = `/typeAnalyse?id=${id}`
+                        window.location.href = `/typeAnalyse?id=${id}`;
                     } else {
                         alert(res.msg);
+                        window.location.href = `/intervention?id=${id}`; 
                     }
                 },
                 error: function(err) {
@@ -91,7 +92,7 @@ $(document).ready(()=>{
                         alert(res.msg);
                     } else {
                         alert(res.msg);
-                        window.location.href = `/intervention?id=${id}`
+                        window.location.href = `/intervention?id=${id}`;
                     }
                 },
                 error: function(err) {

@@ -174,7 +174,7 @@ $(document).ready(function (event) {
             success: function(res) {
                 if (res.code == 200) {
                     alert(res.msg);
-                    window.location.href = `/knowledge?id=${id}`
+                    window.location.href = `/intervention?id=${id}`
                 } else {
                     alert(res.msg);
                 }
